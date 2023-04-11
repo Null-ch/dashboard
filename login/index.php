@@ -25,7 +25,7 @@ if (isset($_POST['login'])) {
         $message = 'Неверный логин или пароль';
         template('messages/alreadyRegistered.php', ["message" => "$message"]);
     } else {
-            $message = 'Вы авторизованы';
+            $message = 'Вы авторизованны';
             template('messages/success.php', ["message" => "$message"]);
             echo "<script> location.href='/'; </script>";
             exit;
