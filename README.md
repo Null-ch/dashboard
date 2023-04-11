@@ -1,6 +1,10 @@
 
 <h1 align="center">Dashboard</h1>
 Данный учебный проект включает в себя php, api, chart.js
+
+<h3>Ссылка на проект: http://neural-network-blog.site/ </h3>
+
+
 Задача: Интегрировать данные из 1С посредством HTTP сервиса
 <details> 
 <summary> Прежний вид </summary>
