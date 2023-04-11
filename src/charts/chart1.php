@@ -6,6 +6,7 @@ $manageStatsChart1 = getValue($manageArrChart1);
 ?>
 <canvas id="myChart" class="flex-item1">
 <script>
+    Chart.defaults.font.size = 16;
   ctx = document.getElementById('myChart');
   new Chart(ctx, {
     type: 'doughnut',

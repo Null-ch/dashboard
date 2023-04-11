@@ -1,4 +1,8 @@
 <?php
+
+
+function pdo(): PDO
+{
 $host = '31.31.196.203';
 $db = 'u1999593_default';
 $user = 'u1999593_default';
@@ -10,5 +14,11 @@ $opt = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 ];
+    static $pdo;
 
-$pdo = new PDO($dsn, $user, $pass, $opt);
+    if (!$pdo) {
+        $pdo = new PDO($dsn, $user, $pass, $opt);
+    }
+
+    return $pdo;
+}

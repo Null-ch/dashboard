@@ -1,15 +1,24 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/src/core.php';
+if(empty($_SESSION['user_id'])) {
+    header('Location: /login');
+}
+
 $today = date("Y-m-d");
 $dateFrom = '';
-$dateTo = '';
-
+$dateTo = $today;
+$message = '';
+$status = 0;
 if (isset($_POST)) {
     if (isset($_POST['dateFrom'])) {
         $dateFrom = $_POST['dateFrom'];
     }
     if (isset($_POST['dateTo'])) {
         $dateTo = $_POST['dateTo'];
+    }
+    if ($dateFrom > $dateTo){
+        $status = 1;
+        $message = 'Начальная дата не может быть больше конечной!';
     }
 }
 
@@ -19,15 +28,21 @@ $allData = getAllData($dateFrom, $dateTo);
 
 <?php require 'templates/header.php'; ?>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<div>
-                    <form style="margin: 10px" method="POST">
-                        <p style="margin: 10px">Выберите дату начала периода: <input type="date"  class='center' name="dateFrom" value="" max="<?php echo $today ?>">
-                        <p style="margin: 10px">Выберите дату окончания периода: <input type="date" class='center'  name="dateTo" value="" max="<?php echo $today ?>">
+<div style="background-color:#e3e1e1; margin:10px">
+                    <form style="margin-left: 350px" method="POST">
+                        <p style="margin: 10px">Выберите дату начала периода: <input type="date"  class='center' name="dateFrom" value="<?php echo $dateFrom ?>" max="<?php echo $today ?>">
+                        <p style="margin: 10px">Выберите дату окончания периода: <input type="date" class='center'  name="dateTo" value="<?php echo $dateTo ?>" max="<?php echo $today ?>">
                             <input type="submit" value="Отправить">
                         </p>
 </div>
-
+<?php
+if ($status > 0) {
+    template('messages/error_message.php', [ "message" => "$message"]);
+}
+?>
 <body>
+    <div class="main">
+<div style="background-color:#e3e1e1; margin:10px">
     <div>
         <table class="flex-box">
             <tbody>
@@ -45,19 +60,7 @@ $allData = getAllData($dateFrom, $dateTo);
             </tbody>
         </table>
     </div>
-
-    <a class="weatherwidget-io" href="https://forecast7.com/ru/55d7637d62/moscow/" data-label_1="Погода" data-label_2="Москва" data-theme="original">Погода Москва</a>
-    <script>
-        ! function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = 'https://weatherwidget.io/js/widget.min.js';
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-        }(document, 'script', 'weatherwidget-io-js');
-    </script>
-
+</div>
+</div>
 </body>
 <?php require 'templates/footer.php'; ?>
