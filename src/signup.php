@@ -13,7 +13,7 @@ function signup($username, $email, $password)
         return $response;
     }
     if ($query->rowCount() == 0) {
-        $query = $connection->prepare("INSERT INTO users(login,password,email) VALUES (:username,:password_hash,:email)");
+        $query = pdo()->prepare("INSERT INTO users(login,password,email) VALUES (:username,:password_hash,:email)");
         $query->bindParam("username", $username, PDO::PARAM_STR);
         $query->bindParam("password_hash", $password_hash, PDO::PARAM_STR);
         $query->bindParam("email", $email, PDO::PARAM_STR);
