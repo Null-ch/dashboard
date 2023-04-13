@@ -7,17 +7,40 @@
 
 Задача: Интегрировать данные из 1С посредством HTTP сервиса
 <details> 
-<summary> Прежний вид </summary>
+<summary> <h3>Прежний вид  </h3></summary>
+<details>
+<summary> v1.0 </summary>
 <img src="https://user-images.githubusercontent.com/65172872/230791161-a8f6955e-d5b2-497e-a438-1fa81b24ac46.png">
 </details>
+
 <details> 
-<summary> Внешний вид </summary>
+<summary> v1.4 </summary>
 <img src="https://user-images.githubusercontent.com/65172872/231189991-6e7f017e-7209-4ddd-88f4-bf155dbc4af1.png">
+<img src="https://user-images.githubusercontent.com/65172872/231190750-1b76991f-c655-4bbf-a57d-e03ed10eae16.png">
+<img src="https://user-images.githubusercontent.com/65172872/231191082-fd1ede61-1bbf-4638-877c-d0c4d914652a.png">
+</details> 
+</details>
+<br>
+<details>
+<summary> <h3> Вид на данный момент </h3> </summary>
+<h4>Основная страница</h4>
+<img src="https://user-images.githubusercontent.com/65172872/231757791-799a8f63-c78c-493f-b3db-e13eb6b96e80.png">
+<img src="https://user-images.githubusercontent.com/65172872/231757899-a1b15e1a-2663-4ddf-a540-3ca571e13dc2.png">
+<img src="https://user-images.githubusercontent.com/65172872/231758059-4b6d638b-40cc-4142-a672-473e8380b80f.png">
+<h4> Регистрация / Авторизация</h4>
 <img src="https://user-images.githubusercontent.com/65172872/231190750-1b76991f-c655-4bbf-a57d-e03ed10eae16.png">
 <img src="https://user-images.githubusercontent.com/65172872/231191082-fd1ede61-1bbf-4638-877c-d0c4d914652a.png">
 </details> 
 
 <h3 align="center">На данном этапе:</h3>
+---v.1.5
+<summary>Добавлена возможность выбора организации для построения отчета;</summary>
+<summary>Добавлены проверки не позволяющие выбрать некорректные периоды;</summary>
+<summary>Переработана верстка;</summary>
+<summary>Переработаны действующие и добавлены функции-обработчики;</summary>
+<summary>Добавлен чарт "Выполнение плана продаж";</summary>
+<summary>*Мелкие правки в визуале чартов;</summary>
+---v.1.0-1.4
 <summary>Созданы 3 чарта (с использованием chart.js);</summary>
 <summary>Добавлены инпут поля (через них вводится период за который нужно получить данные. Данный период кодируется в JSON);</summary>
 <summary>Реализовано подключение по api (Авторизация и передача периода POST методом на PHP);</summary>
