@@ -1,5 +1,5 @@
 <?php
-function getAllData($date1 = '', $date2 = '', $inn = '')
+function getAllData($date1 = '', $date2 = '', $inn = '5024163243')
 {
     if (!$date2) {
         $date2 = date("Y-m-d");
@@ -7,10 +7,6 @@ function getAllData($date1 = '', $date2 = '', $inn = '')
     if (!$date1) {
         $date1 = date("Y-m-d", strtotime($date2 . '- 7 days'));
     }
-    if ($inn = '') {
-        $inn = "5024163243";
-    }
-
     $headers = array('Content-Type:application/json', 'Authorization: Basic ' . base64_encode("СервисGoogleDashboard://GDS%321"));
     $date = [
         'dateFrom' => "$date1",
