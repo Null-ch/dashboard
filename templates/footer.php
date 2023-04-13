@@ -1,5 +1,5 @@
-<footer class="footer" style="background-color:#e3e1e1; margin:10px">
-<p>
-      Аналитический эксперимент © Nulls
-</p>
+<footer>
+    <p style="margin:10px">
+        Аналитический эксперимент © Nulls
+    </p>
 </footer>

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/templates/stylesMain.php'; ?>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,19 +14,21 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:#e3e1e1; margin:10px">
-  <a class="navbar-brand" href="/" style="margin-left:10px">Dash v1.4</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="/">Главная<span class="sr-only"></span></a>
-      <a class="nav-item nav-link" href="/logout">Выход</a>
+    <a class="navbar-brand" href="/" style="margin-left:10px">Dash v1.5</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/">Главная<span class="sr-only"></span></a>
+            <a class="nav-item nav-link" href="/logout">Выход</a>
+        </div>
     </div>
-  </div>
 </nav>
 
 </html>

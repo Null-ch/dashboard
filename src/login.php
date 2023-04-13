@@ -16,6 +16,8 @@ function login($email, $password)
 
     if ($getRow['email'] != $email || $getRow['password'] != $password_hash) {
         return $response;
+    } elseif ($getRow['verificated'] != 1) {
+        return $response += 1;
     } else {
         $_SESSION['user_id'] = $getRow['id'];
     }

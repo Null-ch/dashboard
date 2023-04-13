@@ -6,9 +6,12 @@ $count = count(explode(',', $manageChart2));
 $manageStatsChart2 = getValue($manageArrChart2);
 $res = getNomenclature($allData);
 ?>
-<div class="chartBox1">
+    <div class="chartBox1">
     <canvas id="myChart4" style="margin-left: 10px;"></canvas>
-</div>
+<button class="selectChart" style="margin-left: 180px">Прошлая страница</button>
+<button class="selectChart"> Следующая страница</button>
+    </div>
+
 </style>
 
 
@@ -30,10 +33,10 @@ $res = getNomenclature($allData);
             data: [<?php echo $manageStatsChart2 ?>],
             borderWidth: 1,
             backgroundColor: [
-                'rgba(80, 191, 78, 0.2)',
-            ],
+                        'rgba(80, 191, 78, 0.2)',
+                    ],
         }],
-
+        
     };
     const config = {
         type: 'bar',
@@ -42,7 +45,7 @@ $res = getNomenclature($allData);
             indexAxis: 'y',
             scales: {
                 y: {
-
+                   
                     max: 10,
                 }
             },

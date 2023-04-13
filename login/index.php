@@ -8,11 +8,9 @@ if (isset($_POST['signup'])) {
     $password = $_POST['password'];
     $response = signup($username, $email, $password);
     if ($response === 0) {
-        $message = 'Этот адрес уже зарегистрирован!';
-        template('messages/alreadyRegistered.php', ["message" => "$message"]);
+        template('messages/alreadyRegistered.php', ["message" => 'Этот адрес уже зарегистрирован!']);
     } else {
-        $message = 'Регистрация прошла успешно! Авторизируйтесь';
-        template('messages/success.php', ["message" => "$message"]);
+        template('messages/success.php', ["message" => 'Регистрация прошла успешно! Авторизируйтесь']);
     }
 }
 
@@ -22,13 +20,13 @@ if (isset($_POST['login'])) {
     $response = login($email, $password);
 
     if ($response === 0) {
-        $message = 'Неверный логин или пароль';
-        template('messages/alreadyRegistered.php', ["message" => "$message"]);
+        template('messages/alreadyRegistered.php', ["message" => 'Неверный логин или пароль']);
+    } elseif ($response === 1) {
+        template('messages/alreadyRegistered.php', ["message" => 'Ваша учетная запись еще не подтверждена']);
     } else {
-            $message = 'Вы авторизованны';
-            template('messages/success.php', ["message" => "$message"]);
-            echo "<script> location.href='/'; </script>";
-            exit;
+        template('messages/success.php', ["message" => 'Вы авторизованны']);
+        echo "<script> location.href='/'; </script>";
+        exit;
     }
 }
 
