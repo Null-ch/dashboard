@@ -25,8 +25,6 @@ if (isset($_POST)) {
     if (isset($_POST['organization'])) {
         $inn = $_POST['organization'];
     }
-}
-if (isset($_POST)) {
     if (isset($_POST['organization'])) {
         $inn = $_POST['organization'];
     }
@@ -54,7 +52,7 @@ $allData = getAllData($dateFrom, $dateTo, $inn);
                         <option value="5024163243">Спектр</option>
                         <option value="5024180062">Вектор</option>
                         <? break; ?>
-                    <? default: ?>
+                    <? case '': ?>
                         <option value="5024163243">Спектр</option>
                         <option value="5024180062">Вектор</option>
                 <? endswitch; ?>
