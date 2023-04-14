@@ -35,7 +35,7 @@ $allData = getAllData($dateFrom, $dateTo, $inn);
 ?>
 
 <?php require 'templates/header.php'; ?>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <div style="background-color:#e3e1e1; margin:10px">
     <form style="margin-left: 80px" method="POST">
         <p style="margin: 10px">Выберите дату начала периода: <input type="date" class='center' name="dateFrom"
@@ -92,6 +92,5 @@ if ($status > 0) {
             </div>
         </div>
     </div>
-
 </body>
 <?php require 'templates/footer.php'; ?>

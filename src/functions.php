@@ -49,14 +49,14 @@ function getProfit($arr)
 }
 function getPercent($plan, $arrTotal)
 {
-  foreach ($arrTotal as $key => $item) {
-    if ($item != 0) {
-      $result[$key] = round((($plan[$key] / $item) * 100), 2);
-    } else {
-    $result[$key] = 0;
-  }
-  }
-  return $result;
+    foreach ($arrTotal as $key => $item) {
+        if ($item != 0) {
+            $result[$key] = round((($item / $plan[$key]) * 100), 2);
+        } else {
+            $result[$key] = 0;
+        }
+    }
+    return $result;
 }
 
 function getPercentData($percent, $profit)

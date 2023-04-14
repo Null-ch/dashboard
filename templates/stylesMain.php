@@ -38,21 +38,24 @@
     }
 
     .chart1 {
-        width: 750px;
-        height: 400px;
+        width: 700px;
+        height: 200px;
         margin: 20px;
     }
 
     .chart2 {
         margin: 10px;
-        width: 600px;
-        height: 400px;
-
+        height: 800px;
     }
 
     .chart3 {
-        width: 800px;
+        width: 900px;
         margin-right: 10px;
+    }
+
+    .chart4 {
+        width: 700px;
+        height: 400px;
     }
 
     form {
@@ -81,11 +84,15 @@
     }
 
     p {
-        font-size: 13pt;
+        font-size: 14pt;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 15px;
+        margin-top: 20px;
         text-align: center;
+
+        font: {
+            family: "Nunito", sans-serif;
+        }
     }
 
     .center {

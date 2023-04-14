@@ -1,33 +1,26 @@
 <?php
-$manageArrChart2 = getNomenclature($allData);
-arsort($manageArrChart2);
-$manageChart2 = getName($manageArrChart2);
-$count = count(explode(',', $manageChart2));
-$manageStatsChart2 = getValue($manageArrChart2);
-$res = getNomenclature($allData);
+$allProfitData = getNomenclature($allData);
+arsort($allProfitData);
+$contractor = getName($allProfitData);
+$count = count(explode(',', $contractor));
+$contractorProfit = getValue($allProfitData);
+$total = number_format(array_sum(explode(',', $contractorProfit)), 2, ',', ' ');
+$contractor1 = explode(',', $contractor);
+
 ?>
-<div class="chartBox1">
-    <canvas id="myChart4" style="margin-left: 10px;"></canvas>
-</div>
-</style>
 
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-
+<canvas id="myChart4" class="chart2"></canvas>
+<input oninput="updateChart(this)" type="range" id="points" min="10" max="<?php echo $total ?>">
 <script>
-    const profit = [];
-    const profitpoints = [];
-    for (i = 1; i <= <?php echo $count ?>; i++) {
-        profit.push('');
-        profitpoints.push(i);
-    }
-    const labels = [<?php echo $manageChart2 ?>];
+    Chart.defaults.font.size = 14;
+    const labels = [<?php echo $contractor ?>];
+    const data1 = [<?php echo $contractorProfit ?>];
+
     const data = {
         labels: labels,
         datasets: [{
-            label: 'Прибыль от контрагентов',
-            data: [<?php echo $manageStatsChart2 ?>],
+            label: 'Прибыль в разрезе контрагентов',
+            data: data1,
             borderWidth: 1,
             backgroundColor: [
                 'rgba(80, 191, 78, 0.2)',
@@ -42,12 +35,12 @@ $res = getNomenclature($allData);
             indexAxis: 'y',
             scales: {
                 y: {
-
-                    max: 10,
-                }
+                    min: 0,
+                },
             },
             plugins: {
                 datalabels: {
+                    align: 'right',
                     anchor: 'center',
                     formatter: (value, dnct1) => {
                         let sum = 0;
@@ -63,7 +56,7 @@ $res = getNomenclature($allData);
                     display: true,
                     labels: {
                         font: {
-                            size: 14
+                            size: 13
                         }
                     }
                 }
@@ -78,4 +71,10 @@ $res = getNomenclature($allData);
         config
     );
 
+
+    function updateChart(range) {
+        const rangeValue = labels.slice(0, range.value);
+        myChart4.config.data.labels = rangeValue;
+        myChart4.update()
+    };
 </script>

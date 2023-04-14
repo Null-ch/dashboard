@@ -3,25 +3,40 @@ $manageArrChart1 = getManageCount($allData);
 arsort($manageArrChart1);
 $manageChart1 = getName($manageArrChart1);
 $manageStatsChart1 = getValue($manageArrChart1);
+$total = array_sum($manageArrChart1);
+
 ?>
-<canvas id="myChart" style="margin-left: 90px">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
-    <script
-        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<canvas id="myChart" style="margin-left: 60px">
+
     <script>
+        const centertextDoughnut = {
+            id: 'centertextDoughnut',
+            afterDatasetsDraw(chart, args, pluginOptions) {
+                const { ctx } = chart;
+                ctx.textAlign = 'center';
+                ctx.font = '16px sans-serif';
+                const text = 'Всего рейсов: <?php echo $total ?>';
+                const textWidth = ctx.measureText(text).width;
+                const x = chart.getDatasetMeta(0).data[0].x;
+                const y = chart.getDatasetMeta(0).data[0].y;
+
+                ctx.fillText(text, x, y);
+            }
+        };
+
         Chart.defaults.font.size = 16;
         ctx = document.getElementById('myChart');
         new Chart(ctx, {
             type: 'doughnut',
             data: {
-
                 labels: [<?php echo $manageChart1 ?>],
                 datasets: [{
                     label: 'Всего рейсов',
                     data: [<?php echo $manageStatsChart1 ?>],
+                    cutout: '50%',
                 }]
             },
+
             options: {
                 plugins: {
                     legend: {
@@ -40,7 +55,7 @@ $manageStatsChart1 = getValue($manageArrChart1);
                     },
                 }
             },
-            plugins: [ChartDataLabels],
+            plugins: [ChartDataLabels, centertextDoughnut],
         });
     </script>
 </canvas>
