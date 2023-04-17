@@ -10,11 +10,11 @@
 
 <details> 
 <summary> v1.5 </summary>
-<h4>Основная страница</h4>
+<h4 align="center">Основная страница</h4>
 <img src="https://user-images.githubusercontent.com/65172872/231757791-799a8f63-c78c-493f-b3db-e13eb6b96e80.png">
 <img src="https://user-images.githubusercontent.com/65172872/231757899-a1b15e1a-2663-4ddf-a540-3ca571e13dc2.png">
 <img src="https://user-images.githubusercontent.com/65172872/231758059-4b6d638b-40cc-4142-a672-473e8380b80f.png">
-<h4> Регистрация / Авторизация</h4>
+<h4 align="center"> Регистрация / Авторизация</h4>
 <img src="https://user-images.githubusercontent.com/65172872/231190750-1b76991f-c655-4bbf-a57d-e03ed10eae16.png">
 <img src="https://user-images.githubusercontent.com/65172872/231191082-fd1ede61-1bbf-4638-877c-d0c4d914652a.png">
 </details> 
@@ -32,12 +32,12 @@
 <br>
 <details>
 <summary> <h3> Вид на данный момент </h3> </summary>
-<h4>Основная страница</h4>
+<h4 align="center">Основная страница</h4>
 <img src="https://user-images.githubusercontent.com/65172872/232069730-93b45000-7be4-43b4-89ff-60a8d23f2d54.png">
 <img src="https://user-images.githubusercontent.com/65172872/232070677-99a83a7d-c832-4738-bb53-c0cf16f8b2cf.png">
 <img src="https://user-images.githubusercontent.com/65172872/232422041-3ee65898-4712-4a07-98d9-85570ae4bccf.png">
 
-<h4> Регистрация / Авторизация</h4>
+<h4 align="center"> Регистрация / Авторизация</h4>
 <img src="https://user-images.githubusercontent.com/65172872/231190750-1b76991f-c655-4bbf-a57d-e03ed10eae16.png">
 <img src="https://user-images.githubusercontent.com/65172872/231191082-fd1ede61-1bbf-4638-877c-d0c4d914652a.png">
 </details> 
