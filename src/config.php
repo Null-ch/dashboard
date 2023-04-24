@@ -1,6 +1,4 @@
 <?php
-
-
 $inn = '';
 $today = date("Y-m-d");
 $dateTo = date("Y-m-d");
