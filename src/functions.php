@@ -4,7 +4,6 @@ function getPlanProfit($arr)
     foreach ($arr as $val) {
         foreach ($val as $key => $value) {
             if ($key == 'Менеджер') {
-                $name = $value;
                 $manage[] = $value;
             }
             if ($key == 'План') {
@@ -23,6 +22,22 @@ function getPlanProfit($arr)
     }
 
     return $data;
+}
+function getTripCount($arr)
+{
+    foreach ($arr as $val) {
+        foreach ($val as $key => $value) {
+            if ($key == 'Менеджер') {
+                $name = $value;
+                $manage[] = $value;
+            }
+            if ($key == 'КолРейсов') {
+                $prof[] = $value;
+            }
+        }
+    }
+    $res = array_combine_($manage, $prof);
+    return $res;
 }
 function getProfit($arr)
 {
@@ -47,25 +62,6 @@ function getProfit($arr)
     }
     return $total;
 }
-function getPercent($plan, $arrTotal)
-{
-    foreach ($arrTotal as $key => $item) {
-        if ($item != 0) {
-            $result[$key] = round((($item / $plan[$key]) * 100), 2);
-        } else {
-            $result[$key] = 0;
-        }
-    }
-    return $result;
-}
-
-function getPercentData($percent, $profit)
-{
-    foreach ($profit as $key => $item) {
-        $result[$key] = "{$item} ({$percent[$key]}%)";
-    }
-    return $result;
-}
 
 function getSortBy($example, $sortedArr)
 {
@@ -75,13 +71,7 @@ function getSortBy($example, $sortedArr)
     return $result;
 }
 
-function get_sum($arr)
-{
-    $sum = 0;
-    foreach ($arr as $elem)
-        $sum += $elem;
-    return $sum;
-}
+
 function array_combine_($keys, $values)
 {
     $result = array();
@@ -125,27 +115,18 @@ function getAvgTnPerKm($arr)
     foreach ($arr as $val) {
         foreach ($val as $key => $value) {
             if ($key == 'Менеджер') {
-                $name = $value;
                 $manage[] = $value;
             }
             if ($key == 'ПрибыльТнКм') {
                 $prof[] = $value;
             }
         }
-        $count = array_count_values($manage);
     }
     $res = array_combine_($manage, $prof);
-    foreach ($res as $key => $val) {
-        if (is_array($val)) {
-            $total[$key] = array_sum($val) / $count[$key];
-        } else {
-            $total[$key] = $val / $count[$key];
-        }
-    }
-    return $total;
+    return $res;
 }
 
-function getNomenclature($arr)
+function getProfitPerClient($arr)
 {
     $total = [];
     foreach ($arr as $val) {
@@ -171,12 +152,10 @@ function getNomenclature($arr)
 
 function getManageCount($arr)
 {
-    $name = '';
-    $base = [];
+
     foreach ($arr as $val) {
         foreach ($val as $key => $value) {
             if ($key == 'Менеджер') {
-                $name = $value;
                 $manage[] = $value;
             }
         }
@@ -184,10 +163,7 @@ function getManageCount($arr)
     $count = array_count_values($manage);
     return $count;
 }
-function check_auth(): bool
-{
-    return !!($_SESSION['user_id'] ?? false);
-}
+
 /*Старые функции для получения данных из БД
 function getProfit()
 {

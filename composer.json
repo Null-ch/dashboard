@@ -1,0 +1,11 @@
+{
+    "name": "msi/neural-network-blog.site",
+    "require": {
+        "phpunit/phpunit": "^10.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Msi\\NeuralNetworkBlogSite\\": "src/"
+        }
+    }
+}

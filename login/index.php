@@ -1,6 +1,5 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/src/core.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/templates/styles.php';
 
 if (isset($_POST['signup'])) {
     $username = $_POST['username'];
@@ -33,18 +32,17 @@ if (isset($_POST['login'])) {
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Авторизация</title>
-    <link rel="stylesheet" type="text/css" href="slide navbar style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+	<title>Авторизация</title>
+	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
+    <link href="/assets/css/stylesLogin.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
-
-
 <body>
-    <div class="main">
-        <input type="checkbox" id="chk" aria-hidden="true">
-        <div class="signup">
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
             <form method="POST">
                 <label for="chk" aria-hidden="true">Регистрация</label>
                 <input type="username" name="username" placeholder="Логин" required="">
@@ -52,17 +50,16 @@ if (isset($_POST['login'])) {
                 <input type="password" name="password" placeholder="Пароль" required="">
                 <button name="signup" type="submit">Зарегистрироваться</button>
             </form>
+			</div>
 
-        </div>
-        <div class="login">
+			<div class="login">
             <form method="POST">
                 <label for="chk" aria-hidden="true">Авторизация</label>
                 <input type="email" name="email" placeholder="Email" required="">
                 <input type="password" name="password" placeholder="Пароль" required="">
                 <button name="login" type="submit">Авторизироваться</button>
             </form>
-        </div>
-    </div>
+			</div>
+	</div>
 </body>
-
 </html>
