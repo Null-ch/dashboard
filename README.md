@@ -1,3 +1,5 @@
+<a href="https://codeclimate.com/github/Null-ch/dashboard/maintainability"><img src="https://api.codeclimate.com/v1/badges/f91d449b85d2acb5081d/maintainability" /></a>
+<a href="https://codeclimate.com/github/Null-ch/dashboard/test_coverage"><img src="https://api.codeclimate.com/v1/badges/f91d449b85d2acb5081d/test_coverage" /></a>
 
 <h1 align="center">Dashboard</h1>
 
