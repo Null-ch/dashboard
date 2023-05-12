@@ -5,7 +5,7 @@
 
 Задача: Интегрировать и визуализировать данные из 1С <br />
 Способ реализации: HHTP сервис на стороне 1С, веб приложение (PHP, API, Chart.JS, MSQL для регистрации и авторизации)<br />
-<h3>Ссылка на проект: http://educational-project.site/ </h3>
+<!-- <h3>Ссылка на проект: http://educational-project.site/ </h3> -->
 
 <details> 
 <summary> <h3>Прежний вид  </h3></summary>
