@@ -3,10 +3,13 @@
 
 ?>
 <div class="chart4">
-    <p>Доход разрезе статей</p>
-    <canvas id="chartIncome">
+    <div class="subbox2">
+        <p>Поступления разрезе статей</p>
+        <canvas id="chartIncome">
+    </div>
 </div>
 <script>
+    const lab1 = [<?php echo $incomeNames ?>];
     Chart.defaults.font.size = 13;
     ctx = document.getElementById('chartIncome');
     new Chart(ctx, {
@@ -14,7 +17,7 @@
         data: {
             labels: [<?php echo $incomeNames ?>],
             datasets: [{
-                // label: 'Доход',
+                //  label: 'Доход',
                 data: [<?php echo $incomeStats ?>],
                 backgroundColor: [
                     'rgb(75, 192, 192, 0.2)',
@@ -40,7 +43,7 @@
                         return percentage;
                     },
                     font: {
-                        weight: '800',
+                        weight: '700',
                     },
                 },
 
@@ -48,5 +51,15 @@
         },
         plugins: [ChartDataLabels],
     });
+    const subbox2 = document.querySelector('.subbox2');
+    if (lab1.length < 4) {
+        subbox2.style.height = '300px';
+    } else if (lab1.length < 10) {
+        subbox2.style.height = '400px';
+    } else if (lab1.length < 15) {
+        subbox2.style.height = '600px';
+    } else {
+        subbox2.style.height = '1200px';
+    }
 </script>
 </canvas>
