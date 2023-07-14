@@ -57,14 +57,28 @@
 <img src="https://user-images.githubusercontent.com/65172872/236463376-430ed675-7a6e-4460-8637-1c3481a72e77.png">
 <img src="https://user-images.githubusercontent.com/65172872/236463519-25344990-cddc-4f7b-a405-3fdf6efdf033.png">
 
+<h4 align="center"> Отчет "Логистика" по направлеиям (грузовики/прицепы)</h4>
+<img src="https://github.com/Null-ch/dashboard/assets/65172872/3b639485-39cc-4806-a765-0f53f1aa9514">
+
 <h4 align="center"> Регистрация / Авторизация</h4>
 <img src="https://user-images.githubusercontent.com/65172872/236463653-57de27c2-9131-4be8-ad83-52bd55f21a07.png">
 <img src="https://user-images.githubusercontent.com/65172872/236463740-b96b9e30-997f-436d-ad1f-06f503b8c8c3.png">
 </details> 
 
 <h3 align="center">На данном этапе:</h3>
----v.1.7
+---v.1.8
+<summary><h4>Реализован и добавлен отчет "Логистика" по направлениям (грузовики/прицепы)</h4></summary>
+<img src="https://github.com/Null-ch/dashboard/assets/65172872/3b639485-39cc-4806-a765-0f53f1aa9514">
+<summary>Реализована логика и функции для обработки данных</summary>
+<summary>Написан инпут с получением периода</summary>
+<summary>Дополнена логика обработки инпут даты</summary>
+<summary>Реализован чарт с показателями по основным направлениям</summary>
+<summary>Реализован чарт с показателями в сравнени с выбранным периодом</summary>
+<summary>Реализован вывод средних показателей по направлениям</summary>
+<summary>Реализован вывод в табличной форме ТОП-5 лучших/худших ТС по направлениям</summary>
+<h4>Содержимое</h4>
 <img src="https://github.com/Null-ch/dashboard/assets/65172872/8b021538-a109-49fa-9e7d-9e01d2cff002">
+---v.1.7
 <summary><h4>Реализован и добавлен отчет о доходах и расходах</h4></summary>
 <summary>Добавлены функции обработчики для данных, получаемых через api</summary>
 <summary>Реализованы 2 чарта. Отображение доходов, отображение расходов</summary>
